@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfRoute02"
         mc:Ignorable="d"
-        Title="Route02" Height="458.861" Width="834.683">
-    <Grid Margin="0,0,2,-8">
+        Title="Route02" Height="487.231" Width="1087.744">
+    <Grid Margin="0,0,2,13">
         <StackPanel HorizontalAlignment="Left" Height="388" Margin="20,22,0,0" VerticalAlignment="Top" Width="300">
 
             <StackPanel Orientation="Horizontal" Margin="0,0,0,7">
@@ -65,7 +65,7 @@
             </StackPanel>
 
         </StackPanel>
-        <DataGrid Name="DataGrid1" HorizontalAlignment="Left" Height="388" Margin="325,10,0,0" VerticalAlignment="Top" Width="487"/>
+        <DataGrid Name="DataGrid1" HorizontalAlignment="Left" Height="388" Margin="325,10,0,0" VerticalAlignment="Top" Width="743" FontFamily="Arial" FontSize="20"/>
 
     </Grid>
 </Window>

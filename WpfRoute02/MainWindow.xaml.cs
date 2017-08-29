@@ -52,7 +52,7 @@ namespace WpfRoute02
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             SqlControl st = new SqlControl();
-            string Query = "Select Street, HouseNum, Unit, Code, TVGuide from Route02 where Street = " +'"'+ cboxStreet.SelectedItem.ToString() + '"';
+            string Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02 where Street = " +'"'+ cboxStreet.SelectedItem.ToString() + '"';
             st.ExecQuery(Query);
             DataGrid1.ItemsSource = st.DT.DefaultView;
            
