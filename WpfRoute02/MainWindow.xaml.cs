@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfRoute02
 {
@@ -52,10 +40,21 @@ namespace WpfRoute02
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             SqlControl st = new SqlControl();
-            string Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02 where Street = " +'"'+ cboxStreet.SelectedItem.ToString() + '"';
+            string StreetSelected = " ";
+            string Query = " ";
+
+            StreetSelected = cboxStreet.SelectedItem.ToString();
+            if (StreetSelected != " ")
+            {
+                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02 where Street = " + '"' + cboxStreet.SelectedItem.ToString() + '"';
+            }
+            else
+            {
+                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02";
+            }
             st.ExecQuery(Query);
             DataGrid1.ItemsSource = st.DT.DefaultView;
-           
+
         }
     }
 }
