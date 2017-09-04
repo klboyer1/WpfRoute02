@@ -39,6 +39,7 @@ namespace WpfRoute02
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
+            btnLoad.IsEnabled = false;
             SqlControl st = new SqlControl();
             string StreetSelected = " ";
             string Query = " ";
@@ -46,15 +47,34 @@ namespace WpfRoute02
             StreetSelected = cboxStreet.SelectedItem.ToString();
             if (StreetSelected != " ")
             {
-                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02 where Street = " + '"' + cboxStreet.SelectedItem.ToString() + '"';
+                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Delivery, Path, Seq from Route02 where Street = " + '"' + cboxStreet.SelectedItem.ToString() + '"';
             }
             else
             {
-                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Path, Seq from Route02";
+                Query = "Select Street, HouseNum, Unit, Code, TVGuide, Delivery, Path, Seq from Route02";
             }
             st.ExecQuery(Query);
             DataGrid1.ItemsSource = st.DT.DefaultView;
 
+        }
+
+        private void DataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            DataRowView row_selected = dg.SelectedItem as DataRowView;
+
+            // var txt = row_selected["Updated"].ToString();
+            this.txtHouseNum.Text = row_selected["HouseNum"].ToString();
+            this.txtUnit.Text = row_selected["Unit"].ToString();
+            this.cboxCode.Text = row_selected["Code"].ToString();
+
+            if ((bool)row_selected["TVGuide"])
+            { this.chkboxTVGuide.IsChecked = true; }
+            else
+            { this.chkboxTVGuide.IsChecked = false; }
+
+            this.txtDelivery.Text = row_selected["Delivery"].ToString();
+            // this.txtUpdated.Text = row_selected["Updated"].ToString();
         }
     }
 }

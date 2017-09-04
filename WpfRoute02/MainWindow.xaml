@@ -60,7 +60,18 @@
             </StackPanel>
         </StackPanel>
         <StackPanel>
-            <DataGrid Name="DataGrid1" HorizontalAlignment="Left" Height="440" Margin="325,10,0,0" VerticalAlignment="Top" Width="745" FontFamily="Arial" FontSize="20"/>
+            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" HorizontalAlignment="Left" Height="440" Margin="325,10,0,0" VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Street" Binding="{Binding Street}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="HouseNum" Binding="{Binding HouseNum}" FontSize="40"  ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Code" Binding="{Binding Code}" ></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="TVGuide" Binding="{Binding TVGuide}" ></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Delivery" Binding="{Binding Delivery}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Path" Binding="{Binding Path}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Seq" Binding="{Binding Seq}" ></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
 
     </Grid>
