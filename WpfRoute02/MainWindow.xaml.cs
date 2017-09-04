@@ -76,5 +76,11 @@ namespace WpfRoute02
             this.txtDelivery.Text = row_selected["Delivery"].ToString();
             // this.txtUpdated.Text = row_selected["Updated"].ToString();
         }
+
+        private void RouteButton_Click(object sender, RoutedEventArgs e)
+        {
+            RouteList02 rt = new RouteList02();
+            rt.ShowDialog();
+        }
     }
 }
