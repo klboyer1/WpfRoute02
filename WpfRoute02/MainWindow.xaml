@@ -53,14 +53,18 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Height="60">
                 <Button Name="btnRoadList" Content="Route List" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="RouteButton_Click"></Button>
-                <Button Name="btnLoad" Content="Load Filtered Data" Padding="5" Margin="0,0,10,20"  FontFamily="Arial" FontSize="20" Click="btnLoad_Click" Width="193" ></Button>
+                <Button Name="btnLoad" Content="Load Filtered Data" Padding="5" Margin="0,0,10,20"  FontFamily="Arial" FontSize="20"  Click="btnLoad_Click" Width="193" ></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,0"  >
+                <Button x:Name="btnAdd" Content="Add" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
+                <Button x:Name="btnEdit" Content="Edit" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
+                <Button x:Name="btnDelete" Content="Delete" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
                 <Button x:Name="btnClose" Content="Close" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnClose_Click"/>
+
             </StackPanel>
         </StackPanel>
         <StackPanel>
-            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" HorizontalAlignment="Left" Height="440" Margin="325,10,0,0" VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged">
+            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" Background="#FF15264B" HorizontalAlignment="Left" Height="440" Margin="325,10,0,0" VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged" >
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Street" Binding="{Binding Street}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="HouseNum" Binding="{Binding HouseNum}" FontSize="40"  ></DataGridTextColumn>

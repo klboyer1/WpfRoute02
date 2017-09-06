@@ -44,9 +44,10 @@ namespace WpfRoute02
             string StreetSelected = " ";
             string Query = " ";
 
-            StreetSelected = cboxStreet.SelectedItem.ToString();
+            
             if (StreetSelected != " ")
             {
+                StreetSelected = cboxStreet.SelectedItem.ToString();
                 Query = "Select Street, HouseNum, Unit, Code, TVGuide, Delivery, Path, Seq from Route02 where Street = " + '"' + cboxStreet.SelectedItem.ToString() + '"';
             }
             else

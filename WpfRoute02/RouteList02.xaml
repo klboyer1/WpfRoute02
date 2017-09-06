@@ -8,9 +8,9 @@
         Title="RouteList02" Height="400" Width="600">
     <Grid>
         <StackPanel>
-            <DataGrid Name="DataGrid2" AutoGenerateColumns="False" Padding="10" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" >
+            <DataGrid Name="DataGrid2" AutoGenerateColumns="False" Padding="10" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" Background="White" >
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Street" Binding="{Binding Street}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Street" Binding="{Binding Street}" Foreground="#FF060E3C" ></DataGridTextColumn>
                     <DataGridTextColumn Header="HouseNum" Binding="{Binding HouseNum}" FontSize="40"  ></DataGridTextColumn>
                     <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Code" Binding="{Binding Code}" ></DataGridTextColumn>
