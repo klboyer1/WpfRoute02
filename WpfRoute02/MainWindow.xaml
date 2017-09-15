@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfRoute02"
         mc:Ignorable="d"
-        Title="Route02" Height="516.736" Width="1100.227">
-    <Grid Margin="0,0,2,13">
-        <StackPanel HorizontalAlignment="Left" Height="441" Margin="20,22,0,0" VerticalAlignment="Top" Width="300">
+        Title="Route02" Height="588.928" Width="1600">
+    <Grid Margin="0,0,2,-2">
+        <StackPanel HorizontalAlignment="Left" Height="516" Margin="20,22,0,0" VerticalAlignment="Top" Width="400">
 
             <StackPanel Orientation="Horizontal" Margin="0,0,0,7">
                 <Label  Content="Street" Width="122" FontFamily="Arial" FontSize="20"/>
-                <ComboBox Name="cboxStreet" Width="170" FontFamily="Arial" FontSize="20" SelectionChanged="cboxStreet_SelectionChanged" />
+                <ComboBox Name="cboxStreet" Width="189" FontFamily="Arial" FontSize="20" SelectionChanged="cboxStreet_SelectionChanged" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,0,0,7">
@@ -55,16 +55,20 @@
                 <Button Name="btnRoadList" Content="Route List" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="RouteButton_Click"></Button>
                 <Button Name="btnLoad" Content="Load Filtered Data" Padding="5" Margin="0,0,10,20"  FontFamily="Arial" FontSize="20"  Click="btnLoad_Click" Width="193" ></Button>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,0"  >
-                <Button x:Name="btnAdd" Content="Add" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
-                <Button x:Name="btnEdit" Content="Edit" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Height="60"  >
+                <Button x:Name="btnAdd" Content="Add" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnAdd_Click" />
+                <Button x:Name="btnEdit" Content="Edit" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnEdit_Click"/>
                 <Button x:Name="btnDelete" Content="Delete" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
                 <Button x:Name="btnClose" Content="Close" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnClose_Click"/>
 
             </StackPanel>
+            <StackPanel  Orientation="Horizontal" Height="60"  >
+                <Button x:Name="btnSave" Content="Save" Padding="5"  FontFamily="Arial" FontSize="20" Margin="30,0,20,20" Click="btnSave_Click"/>
+                <Button x:Name="btnCancel" Content="Cancel" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,20,20" Click="btnCancel_Click"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel>
-            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" Background="#FF15264B" HorizontalAlignment="Left" Height="440" Margin="325,10,0,0" VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged" >
+        <StackPanel Margin="4,0,-4,0">
+            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" Background="#FF15264B" HorizontalAlignment="Left" Height="530" Margin="359,10,0,0" VerticalAlignment="Center" Width="877" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged" >
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Street" Binding="{Binding Street}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="HouseNum" Binding="{Binding HouseNum}" FontSize="40"  ></DataGridTextColumn>
@@ -77,6 +81,5 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-
     </Grid>
 </Window>

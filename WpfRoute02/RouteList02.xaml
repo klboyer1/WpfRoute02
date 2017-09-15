@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfRoute02"
         mc:Ignorable="d"
-        Title="RouteList02" Height="400" Width="778.228">
+        Title="RouteList02" Height="400" Width="784.304">
     <Grid Margin="0,0,2,13">
         <StackPanel>
             <DataGrid Name="DataGrid2" AutoGenerateColumns="False" Padding="10" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="745" FontFamily="Arial" FontSize="20" Background="White" >
