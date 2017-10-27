@@ -5,9 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfRoute02"
         mc:Ignorable="d"
-        Title="Route02" Height="588.928" Width="1600">
-    <Grid Margin="0,0,2,-2">
-        <StackPanel HorizontalAlignment="Left" Height="516" Margin="20,22,0,0" VerticalAlignment="Top" Width="400">
+        Title="Route02" Height="600" Width="1600">
+    <Grid Margin="0,0,2,-44" Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="609*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Left" Height="560" Margin="20,22,0,0" VerticalAlignment="Top" Width="400">
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,7">
+                <Label  Content="Id" Width="122" FontFamily="Arial" FontSize="20"/>
+                <TextBox Name="txtId" Width="170" FontFamily="Arial" FontSize="20" />
+            </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,0,0,7">
                 <Label  Content="Street" Width="122" FontFamily="Arial" FontSize="20"/>
@@ -56,9 +67,9 @@
                 <Button Name="btnLoad" Content="Load Filtered Data" Padding="5" Margin="0,0,10,20"  FontFamily="Arial" FontSize="20"  Click="btnLoad_Click" Width="193" ></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Height="60"  >
-                <Button x:Name="btnAdd" Content="Add" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnAdd_Click" />
-                <Button x:Name="btnEdit" Content="Edit" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnEdit_Click"/>
-                <Button x:Name="btnDelete" Content="Delete" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" />
+                <Button x:Name="btnInsert" Content="Insert" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnInsert_Click" />
+                <Button x:Name="btnUpdate" Content="Update" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnUpdate_Click" />
+                <Button x:Name="btnDelete" Content="Delete" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnDelete_Click"/>
                 <Button x:Name="btnClose" Content="Close" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,10,20" Click="btnClose_Click"/>
 
             </StackPanel>
@@ -67,15 +78,17 @@
                 <Button x:Name="btnCancel" Content="Cancel" Padding="5"  FontFamily="Arial" FontSize="20" Margin="0,0,20,20" Click="btnCancel_Click"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="4,0,-4,0">
-            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10" Background="#FF15264B" HorizontalAlignment="Left" Height="530" Margin="359,10,0,0" VerticalAlignment="Center" Width="877" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged" >
+        <StackPanel Margin="4,0,-4,0" Grid.RowSpan="3">
+            <DataGrid Name="DataGrid1" AutoGenerateColumns="False" Padding="10"  HorizontalAlignment="Left" Height="530" Margin="359,10,0,0" VerticalAlignment="Center" Width="877" FontFamily="Arial" FontSize="20" SelectionChanged="DataGrid1_SelectionChanged" >
                 <DataGrid.Columns >
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Street" Binding="{Binding Street}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="HouseNum" Binding="{Binding HouseNum}" FontSize="40"  ></DataGridTextColumn>
                     <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Code" Binding="{Binding Code}" ></DataGridTextColumn>
                     <DataGridCheckBoxColumn Header="TVGuide" Binding="{Binding TVGuide}" ></DataGridCheckBoxColumn>
                     <DataGridTextColumn Header="Delivery" Binding="{Binding Delivery}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Updated" Binding="{Binding Updated}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Path" Binding="{Binding Path}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Seq" Binding="{Binding Seq}" ></DataGridTextColumn>
                 </DataGrid.Columns>
